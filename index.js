@@ -578,3 +578,55 @@ const chunk = (array, num1)=>{
 /*TEST
 console.log(chunk([1,2,3,4,5],3))
 */
+
+/* 9) PYRAMID
+Write a function that accepts a positive number N.
+The function should console log a pyramid shape
+with N levels using the # character.  Make sure the
+pyramid has spaces on both the left and right hand sides
+--- Examples
+    pyramid(1)
+        '#'
+    pyramid(2)
+        ' # '
+        '###'
+    pyramid(3)
+        '  #  '
+        ' ### '
+        '#####' */
+
+
+
+
+/* 10) SPYRAL MATRIX
+Write a function that accepts an integer N
+and returns a NxN spiral matrix.
+--- Examples
+    matrix(2)
+        [[1, 2],
+        [4, 3]]
+    matrix(3)
+        [[1, 2, 3],
+        [8, 9, 4],
+        [7, 6, 5]]
+    matrix(4)
+        [[1, 2, 3, 4],
+        [12, 13, 14, 5],
+        [11, 16, 15, 6],
+        [10,  9,  8, 7]]
+*/
+/*
+const spiralMatrix = (num1)=>{
+    let array = []
+    let number = 0
+    for(let y = 0; y<num1; y++){
+        array[y] = []
+        for(let z = 0; z<num1; z++){
+            number = number +1
+            array[y].push(number)
+        }
+    }
+    return array
+}
+
+console.log(spiralMatrix(4))*/
