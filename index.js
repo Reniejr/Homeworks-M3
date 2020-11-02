@@ -257,4 +257,130 @@ const largestEven = (array) =>{
     return selected
 }
 
+/*
 console.log(largestEven([1, 88, 3, 37, 9]))
+*/
+
+/*
+16)
+Create a function to check from two given integers, whether one is positive and another one is negative.*/
+
+const checkPositive = (num1,num2)=>{
+    if(num1>0 && num2 >0){
+        return `${num1} is positive\n${num2} is positive`
+    }
+    else if(num1>0 && num2 < 0){
+        return `${num1} is positive\n${num2} is negative`
+    }
+    else if(num1<0 && num2 > 0){
+        return `${num1} is negative\n${num2} is positive`
+    }
+}
+/*TEST
+console.log(checkPositive(5,8))*/
+
+/*
+17)
+Create a function to create new string with first 3 characters are in lower case and the others in upper case. If the string length is less than 3 convert all the characters in upper case. 
+*/
+
+const resizeString = (string) =>{
+    let arrayString = Array.from(string)
+    if(arrayString.length > 3){
+        let lower = string.split('').splice(0,3)
+        let newLower = lower.join('').toLowerCase()
+        let upper = string.split('').splice(3,string.split('').length)
+        let newUpper = upper.join('').toUpperCase()
+        return newLower+newUpper
+    }
+    else{
+        return string.toUpperCase()
+    }
+}
+
+/*TEST
+console.log(resizeString('TREcento'))
+*/
+
+/*
+18)
+Create a function to calculate the sum of the two given integers, If the sum is in the range 50..80 return 65 other wise return 80.
+ */
+
+const the65 = (num1, num2)=>{
+    let sum = num1 + num2
+    if(sum > 50 && sum < 80){
+        return 65
+    }
+    else{
+        return 80
+    }
+}
+/*TEST
+console.log(the65(50,2))
+*/
+
+/*
+19)
+Create a function to convert a number to a string, the contents of which depend on the number's factors. Follow next example:
+If the number has 3 as a factor, output 'Diego'.
+If the number has 5 as a factor, output 'Riccardo'.
+If the number has 7 as a factor, output 'Stefano'.
+If the number does not have 3, 5, or 7 as a factor, just pass the number's digits straight through.
+Examples
+28's factors are 1, 2, 4, 7, 14, 28.
+this would be a simple "Stefano".
+30's factors are 1, 2, 3, 5, 6, 10, 15, 30.
+this would be a "DiegoRiccardo".
+34 has four factors: 1, 2, 17, and 34.
+this would be "34". 
+*/
+
+const factorName = (num1)=>{
+    let array = []
+    let factor = 0
+    let name = ''
+    for(let b=0; b<num1;b++){
+        factor = factor+1
+        if(num1%factor===0){
+            array.push(factor)
+        }
+    }
+    for(let c = 0; c < array.length; c++){
+        if(array[c]===3){
+            name = name + 'Diego'
+        }
+        else if(array[c]===5){
+            name =name + 'Riccardo'
+        }
+        else if(array[c]===7){
+            name= name + 'Stefano'
+        }
+        else{
+            name = num1
+        }
+    }
+    return name
+}
+/*TEST
+console.log(factorName(34))
+*/
+
+/*
+20)
+Create a function that given a phrase returns its acronym, like British Broadcasting Corporation returns BBC
+*/
+
+const getAcronym = (phrase)=>{
+    let arrayPhrase = phrase.split(' ')
+    let acronym = ''
+    for(let word of arrayPhrase){
+        word.split('')
+        if(word[0]===word[0].toUpperCase()){
+            acronym = acronym+word[0]
+        }
+    }
+    return acronym
+}
+
+console.log(getAcronym('Hi I Am A String'))
