@@ -502,3 +502,74 @@ const reverseInt = (num1)=>{
 /*TEST
 console.log(reverseInt(-289))
 */
+
+/* 6) STEPS
+Write a function that accepts a positive number N.
+The function should console log a step shape
+with N levels using the # character.  Make sure the
+step has spaces on the right hand side!
+--- Examples
+    steps(2)
+        '# '
+        '##'
+    steps(3)
+        '#  '
+        '## '
+        '###'
+    steps(4)
+        '#   '
+        '##  '
+        '### '
+        '####' */
+/*
+const steps = (num1) =>{
+    let shape = '#'
+    let space = ' '
+    let counter = 0
+    for(let i = 1; i <= num1; i++){
+        console.log(3*(shape))
+        counter = counter+1
+    }
+}
+console.log(steps(2))*/
+
+/* 7) REVERSE STRING
+Given a string, return a new string with the reversed
+order of characters
+--- Examples
+    reverse('apple') === 'leppa'
+    reverse('hello') === 'olleh'
+    reverse('Greetings!') === '!sgniteerG'
+ */
+
+const reverseString = (string)=>{
+    let arrayString = string.split('')
+    return(arrayString.reverse().join(''))
+}
+/*TEST
+console.log(reverseString('Ciao!'))
+*/
+
+/* 8) CHUNK
+Given an array and chunk size, divide the array into many subarrays
+where each subarray is of length size
+--- Examples
+    chunk([1, 2, 3, 4], 2) --> [[ 1, 2], [3, 4]]
+    chunk([1, 2, 3, 4, 5], 2) --> [[ 1, 2], [3, 4], [5]]
+    chunk([1, 2, 3, 4, 5, 6, 7, 8], 3) --> [[ 1, 2, 3], [4, 5, 6], [7, 8]]
+    chunk([1, 2, 3, 4, 5], 4) --> [[ 1, 2, 3, 4], [5]]
+    chunk([1, 2, 3, 4, 5], 10) --> [[ 1, 2, 3, 4, 5]]
+*/
+
+const chunk = (array, num1)=>{
+    let array1 = []
+    let times = Math.floor(array.length/num1)
+    let rest = []
+    for(let x = 0; x<times; x++){
+        array1[x]=[]
+        array1[x].push(array.splice(0, num1))
+    }
+    return array1
+}
+
+console.log(chunk([1,2,3,4,5],2))
