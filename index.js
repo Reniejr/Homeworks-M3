@@ -194,5 +194,67 @@ Types of angles:
     btuse angle: An angle between 90 and 180 degrees.
     Straight angle: A 180 degree angle.
     */
+/*
+const checkAngle = (num1) =>{
+    let result = ''
+    switch(num1){
+        case num1 > 0 && num1 < 90:
+            result = `The ${num1}° is an Acute angle`
+        break;
+        case num1 === 90:
+            result = `The ${num1}° is a Right angle`
+        break;
+        case num1 > 90 && num1 < 180:
+            result = `The ${num1}° is a Obtuse angle`
+        break;
+        case num1 === 180:
+            result = `The ${num1}° is a Right angle`
+        break;
+        default: ;
+    }
+    return result
+}
 
-    
+console.log(checkAngle(70))*/
+
+/*
+13)
+Create a function to find the index of the greatest element of a given array of integers
+*/
+
+const findIndex = (array) =>{
+    let index = 0
+    let selected = 0
+    for(let int of array){
+        let arrayInt = Array.from(int.toString())
+        if(arrayInt.length > index){
+            index = arrayInt.length
+            selected = parseInt(arrayInt.join(''))
+        }
+    }
+    return `${selected} is the longest with ${index} digits`
+}
+
+/*TEST
+console.log(findIndex([13, 456, 77890, 1, 43]))
+*/
+
+/*
+14)
+Create a function to get the largest even number from an array of integers.
+*/
+
+const largestEven = (array) =>{
+    let selected = 0
+    for(let int of array){
+        if(int % 2 === 0){
+            if(int > selected){
+                selected = int
+            }
+        }
+        
+    }
+    return selected
+}
+
+console.log(largestEven([1, 88, 3, 37, 9]))
