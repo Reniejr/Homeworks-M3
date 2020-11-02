@@ -564,12 +564,17 @@ where each subarray is of length size
 const chunk = (array, num1)=>{
     let array1 = []
     let times = Math.floor(array.length/num1)
-    let rest = []
+    let rest = array.length%num1
+    
     for(let x = 0; x<times; x++){
         array1[x]=[]
         array1[x].push(array.splice(0, num1))
     }
+    if(rest!==0){
+        array1.push(array)
+    }
     return array1
 }
-
-console.log(chunk([1,2,3,4,5],2))
+/*TEST
+console.log(chunk([1,2,3,4,5],3))
+*/
