@@ -110,3 +110,89 @@ console.log(copies('ciao', 3))
 Create a function to display the city name if the string begins with "Los" or "New" otherwise return blank.
 */
 
+const city = (string) =>{
+    if(string.includes('Los')|| string.includes('New')){
+        return string
+    }
+    else{
+        return ''
+    }
+}
+/*
+console.log(city('York'))
+*/
+
+/*
+8)
+Create a function to calculate the sum of three elements of a given array of integers of length 3.
+*/
+
+const sumArraysEl = (array) =>{
+    let sum = 0
+    for(let num of array){
+        sum= sum+num
+    }
+    return sum
+}
+/*
+console.log(sumArraysEl([7,5,6]))
+*/
+
+/*
+9)
+Create a function to test whether an array of integers of length 2 contains 1 or a 3. 
+*/
+
+const check1Or3 = (array) =>{
+    /*if(array.includes(1) || array.includes(3)){
+        return 'Number 1 or 3 are included'
+    }
+    else{
+        return 'Number 1 or 3 are not included'
+    }*/
+    for(let num of array){
+        let numArray = (num.toString()).split('')
+        if(numArray.includes('1')||numArray.includes('3')){
+            return parseInt(numArray.join(''))
+        }
+        else{
+            return `The array of ${array} not include 1 or 3`
+        }
+    }
+}
+/*TEST
+console.log(check1Or3([6,7]))
+*/
+
+/*11)
+Create a function to find the longest string from a given array of strings.
+*/
+
+const longestString = (array) =>{
+    let long = 0
+    let selected = ''
+    for(let a=0; a < array.length; a++){
+        let stringArray = Array.from(array[a])
+        if(long < stringArray.length){
+            long = stringArray.length
+            selected = stringArray.join('').toString()
+        }
+    }
+    return selected
+}
+
+/*TEST
+console.log(longestString(['ciao', 'ciaone', 'hi']))
+*/
+
+/*
+12)
+Create a function to find the types of a given angle.
+Types of angles:
+    Acute angle: An angle between 0 and 90 degrees.
+    Right angle: An 90 degree angle.
+    btuse angle: An angle between 90 and 180 degrees.
+    Straight angle: A 180 degree angle.
+    */
+
+    
