@@ -383,4 +383,122 @@ const getAcronym = (phrase)=>{
     return acronym
 }
 
+/*TEST
 console.log(getAcronym('Hi I Am A String'))
+*/
+
+/*ADVANCE------------------------------------------- */
+
+/* 1) MAX CHAR
+Given a string, return the character that is most
+commonly used in the string.
+--- Examples
+    maxChar("abcccccccd") === "c"
+    maxChar("apple 1231111") === "1"
+*/
+
+/*
+const getMaxChar = (string) => {
+    let arrayString = string.split('')
+    let times =[]
+    let char=[]
+    let prev = []
+    char.push(arrayString[0])
+    prev = char
+    for(let d = 1; d < arrayString.length; d++){
+        if(prev.includes(arrayString[d])){
+            prev.push(arrayString[d])
+        }
+        else{
+            char[d] = []
+            char[d].push(arrayString[d])
+        }
+    }
+    return char
+}
+
+console.log(getMaxChar('ciaooooneeeeee'))*/
+
+/* 2) ANAGRAMS
+Check to see if two provided strings are anagrams of each other.
+One string is an anagram of another if it uses the same characters
+in the same quantity. Only consider characters, not spaces
+or punctuation.  Consider capital letters to be the same as lower case
+--- Examples
+  anagrams('rail safety', 'fairy tales') --> True
+  anagrams('RAIL! SAFETY!', 'fairy tales') --> True
+  anagrams('Hi there', 'Bye there') --> False
+*/
+
+/*const getAnagrams = (string1, string2) =>{
+}
+
+let string1 ='Hello World'
+let string2 ='olleH dlroW'
+let array=string1.split(' ')
+let array1 = array[0]+array[1]
+let array2=string2.split(' ')
+let array3 = array2[0]+array2[1]
+if(array1.split('').includes(array3.split(''))){
+    console.log(true)
+}
+else{
+    console.log(false)
+}*/
+
+/* 3) ANAGRAMS 2
+Given a word and a list of possible anagrams, select the correct sublist.
+--- Examples 
+    "listen" and a list of candidates like "enlists" "google" "inlets" "banana" the program should return a list containing "inlets".
+*/
+
+/* 4) PALINDROME
+Given a string, return true if the string is a palindrome
+or false if it is not.  Palindromes are strings that
+form the same word if it is reversed. Do include spaces
+and punctuation in determining if the string is a palindrome.
+--- Examples:
+    palindrome("abba") === true
+    palindrome("abcdefg") === false
+ */
+
+ const checkPalindrome = (string)=>{
+     let array1 = string.split('')
+     let array2 = array1.reverse()
+     let palindrome = array2.join('')
+     return string===palindrome
+ }
+
+/*TEST
+ console.log(checkPalindrome('abba'))
+ */
+
+/* 5) REVERSE INT
+Given an integer, return an integer that is the reverse
+ordering of numbers.
+--- Examples
+    reverseInt(15) === 51
+    reverseInt(981) === 189
+    reverseInt(500) === 5
+    reverseInt(-15) === -51
+    reverseInt(-90) === -9
+ */
+
+const reverseInt = (num1)=>{
+    if(num1>0){
+        let stringNum = num1.toString()
+        let arrayString = stringNum.split('')
+        let newNum = -(parseInt(arrayString.reverse().join('')))
+        return newNum
+    }
+    else{
+        let stringNum = num1.toString()
+        let arrayString = stringNum.split('')
+        let newNum = (parseInt(arrayString.reverse().join('')))
+        return newNum
+
+    }
+}
+/*TEST
+console.log(reverseInt(-289))
+*/
