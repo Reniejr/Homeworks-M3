@@ -8,6 +8,8 @@ let headers = {
     "x-rapidapi-host" : "deezerdevs-deezer.p.rapidapi.com"
 }
 
+let storage = []
+
 const getInfos = ()=>{
     let artist= searchFor.value
     fetch(`https://rapidapi.p.rapidapi.com/search?q=${artist}`, {
@@ -17,6 +19,9 @@ const getInfos = ()=>{
     .then(response => response.json())
     .then(searchJson=>{
         console.log(searchJson.data)
+        for(let b = 0; b < searchJson.data.length; b++){
+            cloneObj(searchJson.data[b]) 
+        }
 
         fetch(`https://rapidapi.p.rapidapi.com/artist/${searchJson.data[0].artist.id}`, {
         "method": "GET",
@@ -25,7 +30,7 @@ const getInfos = ()=>{
         .then(response => response.json())
 
         .then(artistData => {
-            console.log(artistData)
+            //console.log(artistData)
             searchResult.innerHTML = ''
             let artistResult = `
                 <div class=result>
@@ -46,7 +51,7 @@ const getInfos = ()=>{
 
             let showContentTrigger = document.getElementById('title-content')
             showContent = ()=>{
-                searchResult.innerHTML=''
+                let interval = 200
                 for(let a = 0; a < searchJson.data.length; a++){
                     let contentResult = `
                         <div class='col col-12 col-sm-6 col-md-4 col-lg-3 artist-search-result'>
@@ -56,6 +61,13 @@ const getInfos = ()=>{
                         </div>
                     `
                     searchResult.innerHTML = searchResult.innerHTML + contentResult
+                }
+                let album = document.querySelectorAll('.artist-search-result')
+                for(let b = 0; b < album.length; b++){
+                    setTimeout(function(){
+                        album[b].style.opacity = '1'
+                    },interval)
+                    interval = interval +200
                 }
             }
             showContentTrigger.addEventListener('click', showContent)
@@ -73,3 +85,16 @@ const getInfos = ()=>{
     
 
 getArtist.addEventListener('click', getInfos)
+
+const storeIt = (key,value) => {
+    localStorage.setItem(key,JSON.stringify(value));// you can only stores string
+    return value;
+}
+const getFromStore = (key) => {
+    return JSON.parse(localStorage.getItem(key));
+}
+
+const cloneObj = (obj) => {
+    let clone = Object.assign({}, obj)
+    storage.push(clone)
+}

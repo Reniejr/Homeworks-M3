@@ -45,6 +45,8 @@
 .artist-search-result{
     font-size: small;
     margin-top: 10px;
+    opacity: 0;
+    transition: opacity 1s ease;
 }
 
 .artist-search-result img{
