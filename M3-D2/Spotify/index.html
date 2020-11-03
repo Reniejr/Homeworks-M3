@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+
+    <!-- Font Awesome Icons-->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+      integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp"
+      crossorigin="anonymous"
+    />
+
+    <!-- Google Fonts-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Personal Style-->
+    <link rel="stylesheet" href="./CSS/index.css" />
+    <link rel="stylesheet" href="./CSS/animations.css" />
+    <link rel="stylesheet" href="./CSS/media-queries.css" />
+
+    <title>Spotify Kimbo Edition</title>
+  </head>
+
+  <body>
+    <div id="project">
+      <!-- SIDEBAR------------------------------------------------------------------------------------------------------- -->
+      <nav id="sidebar">
+        <div id="toggler">
+          <i class="fas fa-chevron-right"></i>
+          <i class="fas fa-chevron-left"></i>
+        </div>
+
+        <div id="logo">
+          <div class="logo">
+            <i class="fab fa-spotify"></i>
+            <div class="logo-animation"></div>
+            <div class="logo-animation"></div>
+          </div>
+          <h6>Spotify-Kimbo</h6>
+        </div>
+
+        <div id="side-menu">
+          <ul id="navigation">
+            <li class="nav-links">
+              <ion-icon name="home-outline"></ion-icon>
+              <a href="homepage.html">Home</a>
+            </li>
+            <li class="nav-links">
+              <ion-icon name="search-outline"></ion-icon>
+              <a href="search.html">Search</a>
+            </li>
+            <li class="nav-links">
+              <ion-icon name="library-outline"></ion-icon>
+              <a href="library.html">Library</a>
+            </li>
+            <li class="nav-links">
+              <ion-icon name="add-circle-outline"></ion-icon>
+              <a href="empty-playlist.html">Add Playlist</a>
+            </li>
+          </ul>
+
+          <div id="nav-footer">
+            <div id="download">
+              <i class="fas fa-download"></i>
+              <p>Install the app</p>
+              <hr />
+            </div>
+            <div class="user">
+              <a href=""><img src="https://placehold.it/30x30" alt="" /></a>
+              <a href="">User</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <!-- -------------------------------------------------------------------------------------------------------------- -->
+
+      <main id="content">
+        <!-- MAIN-------------------------------------------------------------------------------------------------------- -->
+        <h2 style="font-weight: 800; letter-spacing: -3px; font-size: 3rem">
+          #THROWBACK
+        </h2>
+        <!-- ------------------------------------------------------------------------------------------------------------ -->
+        <input type="button" value="Get Artist" />
+        <!-- 3----------------------------------------------------------------------------------------------------------- -->
+
+        <!-- ------------------------------------------------------------------------------------------------------------ -->
+
+        <!-- 4----------------------------------------------------------------------------------------------------------- -->
+
+        <!-- ------------------------------------------------------------------------------------------------------------ -->
+
+        <!-- 5----------------------------------------------------------------------------------------------------------- -->
+
+        <!-- ------------------------------------------------------------------------------------------------------------ -->
+
+        <!-- 6----------------------------------------------------------------------------------------------------------- -->
+
+        <!-- ------------------------------------------------------------------------------------------------------------ -->
+
+        <!-- 7----------------------------------------------------------------------------------------------------------- -->
+
+        <!-- ------------------------------------------------------------------------------------------------------------ -->
+
+        <!-- 8----------------------------------------------------------------------------------------------------------- -->
+
+        <!-- ------------------------------------------------------------------------------------------------------------ -->
+
+        <!-- 9----------------------------------------------------------------------------------------------------------- -->
+
+        <!-- ------------------------------------------------------------------------------------------------------------ -->
+      </main>
+
+      <!-- PLAYER------------------------------------------------------------------------------------------------------------ -->
+
+      <footer id="player">
+        <div id="player-infos">
+          <img src="https://placehold.it/20x20" alt="" />
+          <div id="infos">
+            <p id="track-title">Track Title</p>
+            <p id="track-artist">Track Artist</p>
+          </div>
+          <ion-icon name="heart" id="like"></ion-icon>
+        </div>
+
+        <div id="main-player-controls">
+          <div id="player-buttons">
+            <ion-icon name="shuffle-outline" id="shuffle-button"></ion-icon>
+            <ion-icon name="play-skip-back" id="prev-track"></ion-icon>
+            <ion-icon name="play" id="play"></ion-icon>
+            <ion-icon name="play-skip-forward" id="next-track"></ion-icon>
+            <ion-icon name="share-social" id="share-button"></ion-icon>
+          </div>
+
+          <div id="track-bar">
+            <div id="current-time">00.00</div>
+            <input type="range" id="audio-bar" />
+            <div id="track-length">00.00</div>
+          </div>
+        </div>
+
+        <div id="other-player-controls">
+          <ion-icon name="list-circle" id="playlist-button"></ion-icon>
+          <div id="volume">
+            <ion-icon name="volume-medium"></ion-icon>
+          </div>
+          <input type="range" id="volume-bar" min="0" max="100" value="50" />
+        </div>
+      </footer>
+
+      <!-- -------------------------------------------------------------------------------------------------------------- -->
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- IONICONS LIBRARY-->
+    <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+
+    <!--PERSONAL FUNCTIONS-->
+    <script src="./JS/index.js"></script>
+  </body>
+</html>

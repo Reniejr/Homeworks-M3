@@ -1,0 +1,342 @@
+/* GENERAL-------------------------------------------------------------------------------------------------------- */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(322deg, rgba(183,245,243,1) 25%, rgba(140,252,255,1) 55%, rgba(64,199,188,1) 90%);
+    height: 100%;
+    overflow: hidden;
+}
+
+#project{
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+/* SIDEBAR-------------------------------------------------------------------------------------------------------- */
+
+/* SIDEBAR */
+
+#sidebar{
+    width: 180px;
+    height: calc(100vh - 4rem);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    margin-left: 0;
+    padding: 20px;
+    background-color: #040404;
+    transition: margin-left 1s ease;
+    white-space: nowrap;
+}
+
+#sidebar > *{
+    color: #ffffff;
+    white-space: nowrap;
+}
+
+/* SIDEBAR - TOGGLER */
+
+#toggler{
+    width: 20px;
+    height: 100px;
+    position: absolute;
+    top: 50%;
+    right: -20px;
+    transform: translateY(-50%);
+    background-color: inherit;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    z-index: 100;
+}
+
+#toggler > i{
+    position: absolute;
+    top: 50%;
+    right: .3rem;
+    transform: translateY(-50%);
+}
+
+#toggler i:nth-of-type(1){
+    display: none;
+}
+
+/* SIDEBAR - LOGO*/
+#logo{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+/* LOGO - ICON*/
+#logo .logo{
+    height: 1.5rem;
+    position: relative;
+    margin-right: 5px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    color: rgb(12, 170, 12);
+}
+
+#logo .logo i{
+    position: relative;
+    top: -0.3rem;
+}
+
+.logo-animation:nth-of-type(1){
+    position: absolute;
+    top: -0.1rem;
+    left: -0.2rem;
+    content: '';
+    width: 1.9rem;
+    height: 1.9rem;
+    border-radius: 50%;
+    animation-delay: 0.6s;
+}
+
+.logo-animation:nth-of-type(2){
+    position: absolute;
+    top: -0.3rem;
+    left: -0.4rem;
+    content: '';
+    width: 2.3rem;
+    height: 2.3rem;
+    border-radius: 50%;
+    animation-delay: 0.9s;
+}
+
+.logo:hover{
+    box-shadow: 0px 0px 10px;
+    filter: brightness(150%);
+}
+
+.logo:hover > .logo-animation:nth-of-type(1){
+    animation: logo 1.8s infinite;
+}
+
+.logo:hover > .logo-animation:nth-of-type(2){
+    animation: logo 1.8s infinite;
+    animation-delay: .3s;
+}
+
+/* LOGO - TITLE*/
+
+#logo h6{
+    margin: 0;
+}
+
+#logo h6:hover{
+    text-shadow: 0px 0px 20px;
+    filter: brightness(150%);
+}
+
+/* SIDEBAR - SIDE-MENU*/
+#side-menu{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+/* SIDEBAR - NAVIGATION */
+
+#navigation{
+    padding: 10px;
+    list-style: none;
+    margin: 0;
+}
+
+.nav-links{
+    margin-bottom: .5rem;
+    color: rgba(255, 255, 255, .5);
+}
+
+.nav-links a{
+    color: rgba(255, 255, 255, .5);
+    text-decoration: none; 
+}
+
+.nav-links:hover{
+    color: #fff;
+}
+
+.nav-links a:hover{
+    color: #fff;
+}
+
+/* SIDEBAR - FOOTER*/
+
+#nav-footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+/* FOOTER - DOWNLOAD*/
+
+#download{
+    display: flex;
+    font-size: .7rem;
+}
+
+#download i{
+    margin-right: 5px;
+}
+
+#downoload hr{
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: rgba(255, 255, 255, .5) 2px solid;
+}
+
+/* FOOTER - USER*/
+
+.user{
+    display: flex;
+    padding: 5px;
+    justify-content: flex-start;
+}
+
+.user img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.user a{
+    color: #fff;
+    text-decoration: none;
+}
+
+/* PLAYER-------------------------------------------------------------------------------------------------------- */
+
+#player{
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    padding: 5px;
+    background-color: #2c2b2b;
+    color: #fff;
+}
+
+/* PLAYER - PLAYER INFOS*/
+#player-infos{
+    width: 25%;
+    height: 100%;
+    display: flex;
+    padding: 10px;
+}
+
+#player-infos img{
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+}
+
+#player-infos #infos p{
+    font-size: .7rem;
+    margin: 0;
+    margin-left: 10px;
+}
+
+#player-infos #like{
+    font-size: 1.2rem;
+    align-self: center;
+    margin-left: 15px;
+}
+
+/* PLAYER - MAIN CONTROLS*/
+
+#main-player-controls{
+    width: 50%;
+}
+
+#player-buttons{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#player-buttons ion-icon{
+    margin: 0 1rem;
+    font-size: 1.8rem;
+}
+
+#player-buttons ion-icon:nth-of-type(1){
+    font-size: 1.25rem;
+    align-self: center;
+}
+
+#player-buttons ion-icon:nth-of-type(5){
+    font-size: 1.25rem;
+    align-self: center;
+}
+
+#track-bar{
+    display: flex;
+}
+
+#track-bar input{
+    width: 100%;
+}
+
+#other-player-controls{
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#other-player-controls ion-icon{
+    font-size: 1.4rem;
+}
+
+#volume{
+    position: relative;
+}
+
+#volume ion-icon{
+    position: absolute;
+    top: -.75rem;
+    left: -.4rem;
+
+}
+
+#volume-bar{
+    width: 70%;
+    margin-left: .2rem;
+}
+
+/* MAIN-------------------------------------------------------------------------------------------------------- */
+#content{
+    width: calc(100%-180px);
+    height: calc(100vh - 4rem);
+    margin-left: 180px;
+    margin-bottom: 4rem;
+    transition: margin-left 1s ease;
+}
+/* 5-------------------------------------------------------------------------------------------------------- */
+
+/* 6-------------------------------------------------------------------------------------------------------- */
+
+/* 7-------------------------------------------------------------------------------------------------------- */
+
+/* 8-------------------------------------------------------------------------------------------------------- */
+
+/* 9-------------------------------------------------------------------------------------------------------- */
+
+/* 10-------------------------------------------------------------------------------------------------------- */
