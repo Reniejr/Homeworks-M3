@@ -469,9 +469,8 @@ and punctuation in determining if the string is a palindrome.
      return string===palindrome
  }
 
-/*TEST
- console.log(checkPalindrome('abba'))
- */
+ console.log(checkPalindrome('abiba'))
+
 
 /* 5) REVERSE INT
 Given an integer, return an integer that is the reverse
@@ -527,7 +526,7 @@ const steps = (num1) =>{
     let space = ' '
     let counter = 0
     for(let i = 1; i <= num1; i++){
-        console.log(3*(shape))
+        console.log(num1*(shape))
         counter = counter+1
     }
 }
@@ -575,9 +574,8 @@ const chunk = (array, num1)=>{
     }
     return array1
 }
-/*TEST
-console.log(chunk([1,2,3,4,5],3))
-*/
+console.log(chunk([1,2,3,4,5,6],3))
+
 
 /* 9) PYRAMID
 Write a function that accepts a positive number N.
@@ -615,10 +613,14 @@ and returns a NxN spiral matrix.
         [11, 16, 15, 6],
         [10,  9,  8, 7]]
 */
-/*
+
 const spiralMatrix = (num1)=>{
     let array = []
     let number = 0
+    let startRow = num1
+    let startCol=num1
+    let endRow = num1
+    let encCol = num1
     for(let y = 0; y<num1; y++){
         array[y] = []
         for(let z = 0; z<num1; z++){
@@ -629,4 +631,5 @@ const spiralMatrix = (num1)=>{
     return array
 }
 
-console.log(spiralMatrix(4))*/
+console.log(spiralMatrix(4))
+
