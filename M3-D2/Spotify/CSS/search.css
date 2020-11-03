@@ -1,0 +1,40 @@
+#content{
+    width: calc(100%-200px);
+
+}
+#search-box{
+    width: 100%;
+    margin: 20px;
+}
+
+#search-result{
+    width: 100%;
+    border: 3px rgb(6, 102, 105) solid;
+    border-radius: 10px;
+    padding: 30px;
+    margin-top: -100%;
+    opacity: 0;
+    transition: margin-top .6s ease, opacity 1.5s ease;
+}
+
+.result{
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(6, 102, 105);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+
+}
+
+.result img{
+    border-radius: 10px;
+}
+
+.result p{
+    margin: 0;
+    margin-left: 10px;
+    color: white;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
