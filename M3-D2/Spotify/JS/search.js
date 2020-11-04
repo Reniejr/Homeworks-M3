@@ -1,5 +1,5 @@
 
-
+//ELEMENTS
 let getArtist = document.getElementById('get-artist')
 let searchFor = document.getElementById('search-for')
 let searchResult = document.getElementById('search-result')
@@ -10,7 +10,10 @@ let headers = {
 
 let storage = []
 
+//FUNCTION FOR GET ARTIST BUTTON
 const getInfos = ()=>{
+
+    //TAKE ARTIST SEARCH API TO SEARCH AND FETCH
     let artist= searchFor.value
     fetch(`https://rapidapi.p.rapidapi.com/search?q=${artist}`, {
 	"method": "GET",
@@ -18,12 +21,10 @@ const getInfos = ()=>{
     })
     .then(response => response.json())
     .then(searchJson=>{
+        //CONSOLE LOG DATA SEARCH RESULTS OF ARTIST
         console.log(searchJson.data)
-        for(let b = 0; b < searchJson.data.length; b++){
-            cloneObj(searchJson.data[b])
-            console.log(storage)
-        }
 
+        //TAKE ARTIST API AND FETCH
         fetch(`https://rapidapi.p.rapidapi.com/artist/${searchJson.data[0].artist.id}`, {
         "method": "GET",
         headers
@@ -32,6 +33,8 @@ const getInfos = ()=>{
 
         .then(artistData => {
             //console.log(artistData)
+
+            //CREATE INDEX FOR ARTIST ID FROM ARTIST API
             searchResult.innerHTML = ''
             let artistResult = `
                 <div class=result>
@@ -39,6 +42,7 @@ const getInfos = ()=>{
                     <p id='title-content'>${artistData.name}</p>
                 </div>
             `
+            //ANIMATION FOR INDEX
             searchResult.style.marginTop = '-100%'
             searchResult.innerHTML = searchResult.innerHTML + artistResult
 
@@ -50,41 +54,62 @@ const getInfos = ()=>{
                 searchResult.style.marginTop = '0px'
             }
 
+            //TAKE ARTIST NAME AND ADD TO IT FUNCTION
             let showContentTrigger = document.getElementById('title-content')
+            
+            //FUNCTION TO SHOW SEARCH API RESULTS
             showContent = ()=>{
+
                 let interval = 200
+
+                //CREATE CARD FOR EACH RESULT
                 for(let a = 0; a < searchJson.data.length; a++){
                     let contentResult = `
                         <div class='col col-12 col-sm-6 col-md-4 col-lg-3 artist-search-result'>
                             <img src='${searchJson.data[a].album.cover_medium}'>
                             <p>${searchJson.data[a].album.title}</p>
                             <p>${searchJson.data[a].title_short}</p>
+                            <audio src=${searchJson.data[a].preview}></audio>
                         </div>
                     `
                     searchResult.innerHTML = searchResult.innerHTML + contentResult
                 }
-                let album = document.querySelectorAll('.artist-search-result')
-                for(let b = 0; b < album.length; b++){
+
+                //ANIMATION FOR EACH CARD
+                let albums = document.querySelectorAll('.artist-search-result')
+                for(let b = 0; b < albums.length; b++){
                     setTimeout(function(){
-                        album[b].style.opacity = '1'
+                        albums[b].style.opacity = '1'
                     },interval)
                     interval = interval +200
                 }
+
+                //PUT AUDIO ON TRACK TITLE
+                let tracks = document.querySelectorAll('.artist-search-result p:nth-of-type(2)')
+                let audio = document.querySelectorAll('.artist-search-result audio')
+                for(let c = 0; c < tracks.length; c++){
+                    tracks[c].addEventListener('click', function(){
+                            audio[c].paused ? audio[c].play() : audio[c].pause()
+                    })
+                }
             }
+            //ADD FUNCTION TO ARTIST NAME
             showContentTrigger.addEventListener('click', showContent)
         })
 
+        //CATCH ERROR ARTIST API
         .catch(err => {
             console.error(err);
         });
 
     })
+    //CATCH ERROR SEARCH API
     .catch(err => {
 	console.error(err);
     });
 }
     
-
+//ADD FUNCTION TO GET ARTIST BUTTON
 getArtist.addEventListener('click', getInfos)
 
 const storeIt = (key,value) => {
@@ -93,10 +118,4 @@ const storeIt = (key,value) => {
 }
 const getFromStore = (key) => {
     return JSON.parse(localStorage.getItem(key));
-}
-
-const cloneObj = (obj) => {
-    let clone = Object.assign({}, obj)
-    storage.push(clone)
-    storeIt('track', storage)
 }
