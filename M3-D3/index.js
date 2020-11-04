@@ -16,6 +16,8 @@ const getImage = ()=>{
         console.log(
         image.images//ARRAY OF IMAGES
             )
+        let urls = image.images.map(url => url.url)
+        console.log(urls)
         let count=0
         for(let a = 0; a < cardImg.length; a++){
             cardImg[a].src=image.images[a].url
@@ -64,8 +66,10 @@ let viewBtn = document.querySelectorAll('.view')
 
 for(let b = 0; b < viewBtn.length; b++){
 
-    const openImg = () =>{
+    
+    let allImages = document.querySelectorAll('.card img')
 
+    viewBtn[b].addEventListener('click', function(){
         let modal = `
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -77,17 +81,17 @@ for(let b = 0; b < viewBtn.length; b++){
             </button>
         </div>
             <div class="modal-body">
-                <img src='${cardImg[b].src}' class='modal-image'/>
+                <img src='${allImages[b].src}' class='modal-image'/>
             </div>
         </div>
         </div>
         </div>
         `
-        document.body.innerHTML = document.body.innerHTML + modal
-    }
+        
+    document.body.innerHTML = document.body.innerHTML + modal
 
 
-    viewBtn[b].addEventListener('click', openImg)
+    })
 }
 
 //4) The Edit button should be replace with a "Hide" button.
@@ -108,3 +112,75 @@ for(let c = 0; c < hideBtn.length; c++){
 //8) After every button is pressed, display in an alert for 5 seconds the result of the operation (es.: 20 images loaded)
 
 //9) Handle API error gracefully using alert components with the message inside
+
+//10) Add at the bottom of the page a carousel with "forest" images loaded by another API call
+
+let pickImg = document.getElementById('pick-images')
+let createSlider = document.getElementById('create-carousel')
+let addSlide = document.getElementById('add-slide')
+
+const putCarousel = ()=>{
+    fetch(`http://www.splashbase.co/api/v1/images/search?query=${pickImg.value}`,{
+        'method':'GET'
+    })
+    .then(res=> res.json())
+    .then(image=>{
+        console.log(image.images)
+        let splashes = image.images.filter(splash => splash.site === 'unsplash')
+        console.log(splashes)
+        let carousel = `
+        <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+    <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="" class="d-block w-100 slide-img" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5 class='title-slide'></h5>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="" class="d-block w-100 slide-img" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5 class='title-slide'></h5>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="" class="d-block w-100 slide-img" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5 class='title-slide'></h5>
+      </div>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+        `
+        let main = document.querySelector('main')
+        main.innerHTML = main.innerHTML + carousel
+        let slideImg = document.querySelectorAll('.slide-img')
+        let titleSlide = document.querySelectorAll('.title-slide')
+        for(let d = 0; d < slideImg.length; d++){
+            slideImg[d].src = image.images[d].url
+            titleSlide[d].innerText = `Forest ID = ${image.images[d].id}`
+        }
+    })
+}
+
+createSlider.addEventListener('click', putCarousel)
+
+const addImage = () =>{
+
+}
+
+
+addSlide.addEventListener('click', addImage)
