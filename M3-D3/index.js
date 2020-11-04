@@ -106,8 +106,11 @@ let hideBtn = document.querySelectorAll('.hide')
 for(let c = 0; c < hideBtn.length; c++){
 
     const hideImage = () =>{
+        if(cardImg[c].style.opacity === '1')
             cardImg[c].style.opacity = '0'
-            cardImg[c].style.transition = 'opacity 2s ease'
+        else{
+            cardImg[c].style.opacity = '1'
+        }
     }
 
     hideBtn[c].addEventListener('click', hideImage)
@@ -130,7 +133,7 @@ const putCarousel = ()=>{
     .then(res=> res.json())
     .then(image=>{
         console.log(image.images)
-        let splashes = image.images.filter(splash => splash.site === 'unsplash')
+        let splashes = image.images.filter(splash => splash.site !== 'unsplash')
         console.log(splashes)
         
         let carousel = `
@@ -175,8 +178,8 @@ const putCarousel = ()=>{
         let slideImg = document.querySelectorAll('.slide-img')
         let titleSlide = document.querySelectorAll('.title-slide')
         for(let d = 0; d < slideImg.length; d++){
-            slideImg[d].src = image.images[d].url
-            titleSlide[d].innerText = `Forest ID = ${image.images[d].id}`
+            slideImg[d].src = splashes[d].url
+            titleSlide[d].innerText = `Forest ID = ${splashes[d].id}`
         }
     })
 }
