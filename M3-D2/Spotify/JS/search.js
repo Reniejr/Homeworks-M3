@@ -89,7 +89,12 @@ const getInfos = ()=>{
                 let audio = document.querySelectorAll('.artist-search-result audio')
                 for(let c = 0; c < tracks.length; c++){
                     tracks[c].addEventListener('click', function(){
-                            audio[c].paused ? audio[c].play() : audio[c].pause()
+                            if(audio[c].paused){
+                                audio[c].play()
+                            }
+                            else{
+                                audio[c].pause()
+                            }
                     })
                 }
             }
