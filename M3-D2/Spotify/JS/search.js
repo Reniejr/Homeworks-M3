@@ -87,6 +87,7 @@ const getInfos = ()=>{
                 //PUT AUDIO ON TRACK TITLE
                 let tracks = document.querySelectorAll('.artist-search-result p:nth-of-type(2)')
                 let audio = document.querySelectorAll('.artist-search-result audio')
+                
                 for(let c = 0; c < tracks.length; c++){
                     tracks[c].addEventListener('click', function(){
                             if(audio[c].paused){
