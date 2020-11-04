@@ -18,12 +18,16 @@ const getImage = ()=>{
             )
         let urls = image.images.map(url => url.url)
         console.log(urls)
+        //let total = image.images.reduce(id, id)
+        //console.log(total)
         let count=0
+        let timeout = 200
         for(let a = 0; a < cardImg.length; a++){
+            
             cardImg[a].src=image.images[a].url
             idImg[a].innerText =  `ID = ${image.images[a].id}`
             count=count+1
-            }
+        }
         alert(`There are ${count} images loaded`)
         }
         
@@ -128,6 +132,7 @@ const putCarousel = ()=>{
         console.log(image.images)
         let splashes = image.images.filter(splash => splash.site === 'unsplash')
         console.log(splashes)
+        
         let carousel = `
         <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
