@@ -20,7 +20,8 @@ const getInfos = ()=>{
     .then(searchJson=>{
         console.log(searchJson.data)
         for(let b = 0; b < searchJson.data.length; b++){
-            cloneObj(searchJson.data[b]) 
+            cloneObj(searchJson.data[b])
+            console.log(storage)
         }
 
         fetch(`https://rapidapi.p.rapidapi.com/artist/${searchJson.data[0].artist.id}`, {
@@ -97,4 +98,5 @@ const getFromStore = (key) => {
 const cloneObj = (obj) => {
     let clone = Object.assign({}, obj)
     storage.push(clone)
+    storeIt('track', storage)
 }
