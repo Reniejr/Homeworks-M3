@@ -32,6 +32,14 @@ window.onload = ()=>{
             })
             let searchText = document.getElementById('search').value
             let searchBtn = document.getElementById('search-btn')
+            const search = () =>{
+                for(let i=0; i < arrayProd.length; i++){
+                    if(arrayProd[i].includes(searchText)){
+                        
+                    }
+                }
+
+            }
         })
         .catch(err=> console.error(err))
 
