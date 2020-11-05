@@ -63,17 +63,23 @@ const getInfos = ()=>{
                 let interval = 200
 
                 //CREATE CARD FOR EACH RESULT
-                for(let a = 0; a < searchJson.data.length; a++){
-                    let contentResult = `
+                //  for(let a = 0; a < searchJson.data.length; a++){
+                    const card =(track) => {
+                        return contentResult = `
                         <div class='col col-12 col-sm-6 col-md-4 col-lg-3 artist-search-result'>
-                            <img src='${searchJson.data[a].album.cover_medium}'>
-                            <p>${searchJson.data[a].album.title}</p>
-                            <p>${searchJson.data[a].title_short}</p>
-                            <audio src=${searchJson.data[a].preview}></audio>
+                            <img src='${track.album.cover_medium}'>
+                            <p>${track.album.title}</p>
+                            <p>${track.title_short}</p>
+                            <audio src=${track.preview}></audio>
                         </div>
                     `
-                    searchResult.innerHTML = searchResult.innerHTML + contentResult
-                }
+                    }
+                    
+                    
+                    //searchResult.innerHTML = searchResult.innerHTML + contentResult
+                //}
+
+                searchResult.innerHTML = searchJson.data.reduce((accumulator, track)=> accumulator + card(track), searchResult.innerHTML)
 
                 //ANIMATION FOR EACH CARD
                 let albums = document.querySelectorAll('.artist-search-result')
@@ -83,6 +89,7 @@ const getInfos = ()=>{
                     },interval)
                     interval = interval +200
                 }
+
 
                 //PUT AUDIO ON TRACK TITLE
                 let tracks = document.querySelectorAll('.artist-search-result p:nth-of-type(2)')
@@ -98,6 +105,7 @@ const getInfos = ()=>{
                             }
                     })
                 }
+
             }
             //ADD FUNCTION TO ARTIST NAME
             showContentTrigger.addEventListener('click', showContent)
