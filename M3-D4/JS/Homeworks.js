@@ -1,21 +1,4 @@
-// const fetcher = (url) =>{
-//     fetch(`${url}`,{
-//         'method' : 'GET'
-//     })
-
-//     .then(response => response.json())
-//     .then(parsedJson => {
-//         console.log(parsedJson)
-//         return arr = parsedJson
-//     })
-//     .catch(err=> console.error(err))
-// }
-
-
 //0) Get all the products from the API using a fetch
-
-//fetcher('https://striveschool-api.herokuapp.com/books')
-
 //1) Display the list of items available on the page using template literals `` and .forEach
 
 const prodCard = (asin, title, img, price, category) =>{
@@ -47,17 +30,8 @@ window.onload = ()=>{
                 let displayprod = prodCard(prod.asin, prod.title, prod. img, prod.price, prod.category)
                 listProduct.innerHTML = listProduct.innerHTML + displayprod
             })
-            
             let searchText = document.getElementById('search').value
             let searchBtn = document.getElementById('search-btn')
-            const filterBook = () => {
-                let listTitle = arrayProd.map(titleBook => titleBook.title)
-                let filteres = listTitle.filter(foundBook => foundBook.value === searchText)
-                console.log(listTitle)
-                console.log(filteres)
-
-            }
-            searchBtn.addEventListener('click', filterBook)
         })
         .catch(err=> console.error(err))
 
@@ -65,6 +39,7 @@ window.onload = ()=>{
 
 
 /* */
+
 
 
 let addedBook = []
@@ -112,7 +87,6 @@ setTimeout(()=>{
         skipBtn[b].addEventListener('click', skipBook)
     }
 
-    
     
 
 }, 2000) 
