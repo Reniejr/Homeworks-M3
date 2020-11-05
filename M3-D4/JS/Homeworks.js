@@ -50,15 +50,14 @@ window.onload = ()=>{
             
             let searchText = document.getElementById('search').value
             let searchBtn = document.getElementById('search-btn')
-            const filterBook = (searchText) => {
-                newList = arrayProd.filter(book => book.title === searchText)
-                newList.forEach(filtered =>{
-                    let filtBook = prodCard(filtered.asin, filtered.title, filtered. img, filtered.price, filtered.category)
+            const filterBook = () => {
+                let listTitle = arrayProd.map(titleBook => titleBook.title)
+                let filteres = listTitle.filter(foundBook => foundBook.value === searchText)
+                console.log(listTitle)
+                console.log(filteres)
 
-                    listProduct.innerHTML = listProduct.innerHTML + filtBook
-                })
-                searchBtn.addEventListener('click', filterBook)
             }
+            searchBtn.addEventListener('click', filterBook)
         })
         .catch(err=> console.error(err))
 
