@@ -10,7 +10,59 @@ let headers = {
 
 let storage = []
 
-//FUNCTION FOR GET ARTIST BUTTON
+// let result = ''
+// let fetchSearch = ()=>{
+//     let artist = searchFor.value
+//     let result = ''
+//     return fetch(`https://rapidapi.p.rapidapi.com/search?q=${artist}`, {
+//         "method": "GET",
+//         headers
+//         })
+//         .then(response => response.json())
+//         .then(searchJson=>{
+//             result = searchJson.data
+//             console.log(result)
+//             fetchArtist(result)
+//         })
+// }
+
+// let fetchArtist = (result)=>{
+//     let artistSel = ''
+//     return fetch(`https://rapidapi.p.rapidapi.com/artist/${result[0].artist.id}`, {
+//         "method": "GET",
+//         headers
+//         })
+//         .then(response => response.json())
+
+//         .then(artistData => {
+//             console.log(artistData)
+//             artistSel = artistData
+//             artistIndex(artistSel)
+//         })
+        
+// }
+
+// const artistIndex = (artistSel)=>{
+//     let artistResult = `
+//                     <div class=result>
+//                         <img src='${artistSel.picture_small}' class='artist-image'>
+//                         <p id='title-content'>${artistSel.name}</p>
+//                     </div>
+//                 `
+//                 // ANIMATION FOR INDEX
+//                             searchResult.style.marginTop = '-100%'
+//                             searchResult.innerHTML = searchResult.innerHTML + artistResult
+                
+//                             if(searchResult.style.marginTop = '-100%'){
+//                                 setTimeout(function(){
+//                                     searchResult.style.display = 'flex'
+//                                 }, 950)
+//                                 searchResult.style.opacity = '1'
+//                                 searchResult.style.marginTop = '0px'
+//                             }
+// }
+
+// FUNCTION FOR GET ARTIST BUTTON
 const getInfos = ()=>{
 
     //TAKE ARTIST SEARCH API TO SEARCH AND FETCH
@@ -105,7 +157,6 @@ const getInfos = ()=>{
                             }
                     })
                 }
-
             }
             //ADD FUNCTION TO ARTIST NAME
             showContentTrigger.addEventListener('click', showContent)
@@ -121,6 +172,24 @@ const getInfos = ()=>{
     .catch(err => {
 	console.error(err);
     });
+}
+
+//GENRE LIST
+let getgenre = ()=>{
+    fetch("https://deezerdevs-deezer.p.rapidapi.com/genre/132/artists", {
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-key": "6cc8e6c6femsh03ff5cffd3927e2p12ac5djsn4ad2e0705629",
+		"x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com"
+	}
+})
+.then(response => {
+	return response.json();
+})
+.then(data => console.log(data.data))
+.catch(err => {
+	console.error(err);
+});
 }
     
 //ADD FUNCTION TO GET ARTIST BUTTON
