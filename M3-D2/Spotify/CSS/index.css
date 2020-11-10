@@ -290,9 +290,28 @@ body{
     display: flex;
 }
 
-#track-bar input{
+#audio-bar{
+    background-color: transparent;
     width: 100%;
 }
+
+#audio-bar[type=range]::-moz-range-track {
+  width: 100%;
+  height: 3px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: white;
+  border-radius: 1.3px;
+  border: none;
+}
+
+#audio-bar[type="range"]::-moz-range-progress {
+    background-color:blue;
+    height: 3px; 
+}
+
+
+
 
 #other-player-controls{
     width: 25%;
@@ -307,6 +326,7 @@ body{
 
 #volume{
     position: relative;
+    background: transparent;
 }
 
 #volume ion-icon{
@@ -317,9 +337,25 @@ body{
 }
 
 #volume-bar{
+    background-color: transparent;
     width: 70%;
-    margin-left: .2rem;
 }
+
+#volume-bar[type=range]::-moz-range-track {
+    width: 100%;
+    height: 3px;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    background-color: white;
+    border-radius: 1.3px;
+    border: none;
+}
+  
+  #volume-bar[type="range"]::-moz-range-progress {
+      background-color:blue;
+      height: 3px; 
+  }
+  
 
 /* MAIN-------------------------------------------------------------------------------------------------------- */
 #content{

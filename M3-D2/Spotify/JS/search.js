@@ -49,6 +49,8 @@ let storage = []
 //                         <p id='title-content'>${artistSel.name}</p>
 //                     </div>
 //                 `
+// searchResult.innerHTML = searchJson.data.reduce((accumulator, track)=> accumulator + card(track), searchResult.innerHTML)
+
 //                 // ANIMATION FOR INDEX
 //                             searchResult.style.marginTop = '-100%'
 //                             searchResult.innerHTML = searchResult.innerHTML + artistResult
