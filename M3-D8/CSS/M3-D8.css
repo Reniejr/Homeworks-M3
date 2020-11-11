@@ -1,0 +1,26 @@
+#main-content{
+    color: white;
+    position: absolute;
+    top: 5rem;
+    overflow: auto;
+    padding: 1rem;
+}
+
+input{
+    padding: .2rem;
+    border-radius: 5px;
+    color: white;
+    background-color: #19191b;
+    border: #01ff84 2px solid;
+
+}
+
+.row input{
+    width: 100%;
+}
+
+.card{
+    background-color: #19191b;
+    color: white;
+    border: white 1px solid;
+}
