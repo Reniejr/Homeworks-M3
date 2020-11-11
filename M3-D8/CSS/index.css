@@ -1,0 +1,138 @@
+html, body{
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+footer{
+    width: 100%;
+}
+
+.navbar{
+    z-index: 10;
+}
+
+#homepage{
+    width: 100%;
+    height: 100%;
+}
+
+#background{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: #19191b;
+    z-index: -10;
+}
+
+/*BACKGROUND*/
+.bigger-logo, .bigger-logo > .circle-ray{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+
+.bigger-logo img{
+    width: 60vh;
+    height: 60vh;
+    border-radius: 50%;
+    animation: rotate 10s infinite;
+}
+
+.circle-ray:nth-of-type(1){
+    content: '';
+    width: 68vh;
+    height: 68vh;
+    animation: appear-ray 1.8s infinite;
+    animation-delay: 0.6s;
+}
+.circle-ray:nth-of-type(2){
+    content: '';
+    width: 77vh;
+    height: 77vh;
+    animation: appear-ray 1.8s infinite;
+    animation-delay: .9s;
+}
+
+/*BACKGROUND----------------------------------LOGO BALLS*/
+
+.logo-balls img{
+    width: 2vh;
+    height: 2vh;
+    position: absolute;
+    bottom: -2vh;
+    border-radius: 50%;
+    animation-name: levitate-home, rotate;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.logo-ball-1 img{left: 12.5%; animation-duration: 6s, 2s; animation-delay: 2s;}
+.logo-ball-2 img{left: 25%; animation-duration: 4s, 2s; animation-delay: 1s;}
+.logo-ball-3 img{left: 37.5%; animation-duration: 8s, 2s; animation-delay: 3.5s;}
+.logo-ball-4 img{left: 48%; animation-duration: 3s, 2s; animation-delay: .5s;}
+.logo-ball-5 img{left: 62.5%; animation-duration: 6s, 2s;animation-delay: 2s;}
+.logo-ball-6 img{left: 75%; animation-duration: 4s, 2s;animation-delay: 1s;}
+.logo-ball-7 img{left: 87.5%; animation-duration: 8s, 2s;animation-delay: 3.5s;}
+.logo-ball-8 img{left: 97%; animation-duration: 3s, 2s;animation-delay: .5s;}
+
+/*---------------------------------------------------------------------------------*/
+
+/*MENU*/
+
+#menu{
+    width: 60vh;
+    height: 60vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -51%);
+    padding: 0;
+    margin: 0;
+}
+
+#menu .option{
+    width: 28.5vh;
+    height: 28.5vh;
+    display: inline-flex;
+    position: relative;
+    margin: .5vh .5vh;
+    background-color: #252527;
+    flex-direction: column;
+    position: absolute;
+    color: white;
+    opacity: 0;
+    cursor: pointer;
+}
+
+#menu .option:nth-of-type(1){border-top-left-radius: 100%;bottom: 50%;right: 50%; align-items: flex-end; border-top: #01ff38 2px solid;border-left: #01ff38 2px solid;
+    font-size: 50px;}
+#menu .option:nth-of-type(2){border-top-right-radius: 100%;bottom: 50%;left: 50%;}
+#menu .option:nth-of-type(3){border-bottom-left-radius: 100%;top: 50%;right: 50%;}
+#menu .option:nth-of-type(4){border-bottom-right-radius: 100%;top: 50%;left: 50%;}
+
+#menu .option:nth-of-type(1) p{
+    height: 8vh;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-right: 2%;
+    letter-spacing: -4px;
+    color: rgba(255, 255, 255, .7);
+    text-align: right;
+    
+}
+#menu .option:nth-of-type(1):hover{
+    width: 35vh;
+    height: 35vh;
+    transition: all .5s ease;
+    justify-content: center;
+    font-size: 60px;
+    opacity: 1;
+}
