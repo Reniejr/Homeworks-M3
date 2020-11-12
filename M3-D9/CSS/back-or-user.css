@@ -22,6 +22,10 @@ h1, .col-6 h2{
     font-size: 2rem;
 }
 
+.col-6 h2{
+    cursor: pointer;
+}
+
 .col-6{
     width: 50%;
     height: 100%;
