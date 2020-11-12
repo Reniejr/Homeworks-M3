@@ -1,0 +1,70 @@
+html, body{
+    width: 100%;
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+}
+
+#main-content{
+    width: 100%;
+    height: calc(100% - 8rem);
+    position: relative;
+    top: 4.5rem;
+    color: white;
+    overflow: auto;
+}
+
+#main-content .row{
+    width: 100%;
+    margin: 0;
+    padding: 1rem;
+}
+
+.row .col-6{
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    position: relative;
+    overflow: auto;
+}
+
+.card{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+}
+
+#fill-form input[type=button]{
+    width: 50%;
+    align-self: center;
+    background: none;
+    border: none;
+    color: #01ff84;
+}
+#fill-form input[type=text], textarea{
+    background-color: transparent;
+    border: 1px solid #00743c;
+    color: white;
+}
+.modal{
+    color: black;
+}
+
+#main-content p{
+    margin: 0;
+}
+
+#main-content p input{
+    background: none;
+    border: none;
+    color: #01ff84;
+
+}
+
+#prod-to-edit .modal-body{
+    height: 30vh;
+    overflow: auto;
+}

@@ -1,0 +1,90 @@
+.background{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: -10;
+}
+
+#bigger-logo, .circle-ray:nth-of-type(1), .circle-ray:nth-of-type(2){
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+
+#bigger-logo img{
+    width: 60vh;
+    height: 60vh;
+    border-radius: 50%;
+    animation: rotate 20s infinite;
+}
+
+.circle-ray:nth-of-type(1){
+    content: '';
+    width: 68vh;
+    height: 68vh;
+    animation: appear-ray 1.8s infinite;
+    animation-delay: 0.6s;
+}
+.circle-ray:nth-of-type(2){
+    content: '';
+    width: 77vh;
+    height: 77vh;
+    animation: appear-ray 1.8s infinite;
+    animation-delay: .9s;
+}
+
+/*MENU*/
+
+#menu{
+    width: 60vh;
+    height: 60vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -51%);
+    padding: 0;
+    margin: 0;
+}
+
+#menu .option{
+    width: 28.5vh;
+    height: 28.5vh;
+    display: inline-flex;
+    position: relative;
+    margin: .5vh .5vh;
+    background-color: #252527;
+    flex-direction: column;
+    position: absolute;
+    color: white;
+    opacity: 0;
+    cursor: pointer;
+}
+
+#menu .option:hover{
+    width: 35vh;
+    height: 35vh;
+    transition: all .5s ease;
+    justify-content: center;
+    opacity: 1;
+}
+
+#menu .option:nth-of-type(1){border-top-left-radius: 100%;bottom: 50%;right: 50%; align-items: flex-end; border-top: #01ff38 2px solid;border-left: #01ff38 2px solid;
+    font-size: 50px;}
+#menu .option:nth-of-type(2){border-top-right-radius: 100%;bottom: 50%;left: 50%;}
+#menu .option:nth-of-type(3){border-bottom-left-radius: 100%;top: 50%;right: 50%;}
+#menu .option:nth-of-type(4){border-bottom-right-radius: 100%;top: 50%;left: 50%;}
+
+#menu .option:nth-of-type(1) p{
+    height: 8vh;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-right: 2%;
+    letter-spacing: -4px;
+    color: rgba(255, 255, 255, .7);
+    text-align: right;
+    
+}
+#menu .option:nth-of-type(1):hover{font-size: 60px;}

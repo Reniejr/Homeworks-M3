@@ -1,0 +1,89 @@
+/*CENTRAL LOGO */
+#start-logo, #start-logo > img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/*CENTRAL LOGO HOVER*/
+#start-logo:hover{
+    rotate: -60deg;
+    transition: rotate 1s ease;
+    transition-delay: .7s;
+}
+
+/*CENTRAL LOGO HOVER > LOGO*/
+#start-logo:hover > img{
+    width: 50vh;
+    filter: brightness(130%);
+    transition: all .5s linear;
+}
+
+#start-logo:hover > .logo1{
+    margin-top: 2rem;
+    margin-left: 2rem;
+}
+
+#start-logo:hover > .logo2{
+    margin-top: -2rem;
+    margin-left: -2rem;
+}
+
+/*START BUTTON*/
+#start{
+    color: #01ff84;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    opacity: 0;
+    font-size: .7rem;
+    cursor: pointer;
+}
+
+/*CENTRAL LOGO HOVER > START BUTTON*/
+#start-logo:hover > #start{
+    rotate: 60deg;
+    font-size: 2rem;
+    opacity: 1;
+    transition: font-size .3s ease, opacity 1s ease;
+    transition-delay: 1.7s;
+}
+
+/*LOGO ROTATE PLUS CIRCLE RAYS*/
+#bigger-logo img{
+    width: 50vh;
+    height: 50vh;
+    position: absolute;
+    bottom: -10vh;
+    left: -20vh;
+    border-radius: 50%;
+    animation: rotate 10s infinite;
+}
+
+#bigger-logo .circle-ray:nth-of-type(1)::before{
+    content: '';
+    width: 54vh;
+    height: 54vh;
+    position: absolute;
+    bottom: -11vh;
+    left: -21vh;
+    border-radius: 50%;
+    animation: appear-ray 1.8s infinite;
+    animation-delay: 0.6s;
+}
+
+#bigger-logo .circle-ray:nth-of-type(2)::before{
+    content: '';
+    width: 60vh;
+    height: 60vh;
+    position: absolute;
+    bottom: -12vh;
+    left: -22vh;
+    border-radius: 50%;
+    animation: appear-ray 1.8s infinite;
+    animation-delay: .9s;
+}
+
+
