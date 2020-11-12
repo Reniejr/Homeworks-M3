@@ -8,7 +8,7 @@ let newCard = (id, img, title, desc, brand, price)=>{
         <div class="card-body">
             <h5 class="card-title">${title}</h5>
             <p class="card-text">${desc}</p>
-            <span class="brand">${brand}</span><span class="price">${price}€</span>
+            <p class="brand">${brand}</p><p class="price">${price}€</p>
             <input
                 type="button"
                 class="btn btn-primary"
