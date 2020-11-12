@@ -14,15 +14,25 @@ html, body{
 
 #main-content .row{
     width: 100%;
-    height: calc(100% - 11rem);
+    height: 50%;
     margin: 0;
     padding: 1rem;
+    overflow: visible;
 }
 
 .card{
+    height: 100%;
     display: flex;
     flex-direction: column;
     margin: 5px;
     font-size: smaller;
     color: black;
+}
+
+.card:hover{
+    animation: shining-bounce 1s infinite;
+}
+
+.card-title{
+    cursor: pointer;
 }

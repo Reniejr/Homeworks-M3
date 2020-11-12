@@ -40,3 +40,20 @@
         margin-top: -100%;
     }
 }
+
+/*ZOOM*/
+@keyframes zoom{
+    0%{}
+    100%{
+        width: 500%;
+        height: 500%;
+        z-index: 100;
+    }
+}
+
+/*SHINING CARD + BONCING*/
+@keyframes shining-bounce{
+    0%{}
+    50%{margin-top: 10px; box-shadow: 0 0 30px rgba(255, 255, 255, .7);}
+    100%{}
+}

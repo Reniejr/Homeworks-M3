@@ -23,3 +23,6 @@ window.onload = async ()=>{
     let price = document.querySelector('.col-6:nth-of-type(2) p:nth-of-type(2)')
     price.innerText =obj.price + '€'
 }
+
+let buyBtn = document.querySelector('input')
+buyBtn.addEventListener('click', ()=>{alert('Congratulions you have just bought something useless!!!')})

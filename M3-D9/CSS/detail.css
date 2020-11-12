@@ -29,42 +29,7 @@ html, body{
     overflow: auto;
 }
 
-.card{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: black;
-}
-
-#fill-form input[type=button]{
+input{
     width: 50%;
     align-self: center;
-    background: none;
-    border: none;
-    color: #01ff84;
-}
-#fill-form input[type=text], textarea{
-    background-color: transparent;
-    border: 1px solid #00743c;
-    color: white;
-}
-.modal{
-    color: black;
-}
-
-#main-content p{
-    margin: 0;
-}
-
-#main-content p input{
-    background: none;
-    border: none;
-    color: #01ff84;
-
-}
-
-#prod-to-edit .modal-body{
-    height: 30vh;
-    overflow: auto;
 }
