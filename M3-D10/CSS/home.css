@@ -55,6 +55,9 @@ body{
     margin: 0 1rem;
     position: relative;
 }
+.movie:hover > img{
+    filter: brightness(30%)
+}
 .movie:hover > .infos{
     opacity: 1;
 }

@@ -84,6 +84,7 @@ showCat.onclick = () =>{
         category[i].onclick = async ()=>{
             let response = await fetch(url+category[i].innerText,{headers})
             let movieList = await response.json()
+            console.log(movieList)
             for(let b = 0; b<movieList.length; b++){
                 moviesListOnCat[i].innerHTML+=movieToedit(movieList[b].name)
             }

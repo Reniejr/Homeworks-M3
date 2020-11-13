@@ -27,8 +27,10 @@ window.onload = async ()=>{
         let fetcher = async () =>{
             let response = await fetch(url+category[i].innerHTML, {headers})
             let result = await response.json()
+            console.log(result)
             for(let a = 0; a<result.length; a++){
                 movieList[i].innerHTML += putMovie(result[a].imageUrl, result[a].name, result[a].description)
+                console.log(result[a])
             } 
         }
         fetcher()
