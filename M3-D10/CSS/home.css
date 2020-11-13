@@ -1,4 +1,3 @@
-
 #main-content{
     position: relative;
 }
@@ -29,4 +28,20 @@
     padding: 0;
     padding-left: 1rem;
     overflow-x: hidden;
+}
+
+.movie-cat{
+    height: 40vh;
+}
+.movie-list{
+    display: flex;
+}
+
+.movie-cat h4{
+    width: 100%;
+}
+
+.movie-list img{
+    width: 20vh;
+    margin: 0 1rem;
 }

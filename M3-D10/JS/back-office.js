@@ -51,4 +51,91 @@ postBtn.onclick = async ()=>{
     })
     let newMovie = await response.json()
     console.log(newMovie)
+    window.location.reload()
+}
+//--------------------------------------------------------------------------
+
+//EDIT POSTED MOVIE
+
+let showCat = document.getElementById('show-categories')
+let modalBody = document.getElementById('movie-categories')
+let catList = (title)=>{
+    return `
+    <li class='category'>
+        <p>${title}</p>
+        <ul class='movies-by-cat'>
+        </ul>
+    </li>
+    `
+}
+
+let movieToedit = (title)=>{
+    return `
+        <li class='movie-to-edit'>${title}</li>
+    `
+}
+
+showCat.onclick = () =>{
+    modalBody.innerHTML = ''
+    array.forEach(cat=> modalBody.innerHTML += catList(cat))
+    let category = document.querySelectorAll('.category p')
+    let moviesListOnCat = document.querySelectorAll('.movies-by-cat')
+    for(let i = 0; i < category.length; i++){
+        category[i].onclick = async ()=>{
+            let response = await fetch(url+category[i].innerText,{headers})
+            let movieList = await response.json()
+            for(let b = 0; b<movieList.length; b++){
+                moviesListOnCat[i].innerHTML+=movieToedit(movieList[b].name)
+            }
+            let listMovies = document.querySelectorAll('.movie-to-edit')
+            for(let c = 0; c < listMovies.length; c++){
+                listMovies[c].onclick = () =>{
+                    editMovie(movieList[c])
+                }
+
+            }
+        }
+    }
+}
+
+let editMovie = (obj)=>{
+    console.log(obj)
+    addImg.value = obj.imageUrl
+    addTitle.value = obj.name
+    addCat.value = obj.category
+    addDesc.value = obj.description
+    cardImg.src = obj.imageUrl
+    cardTitle.innerHTML = obj.name
+    cardCat.innerHTML = obj.category
+    cardDesc.innerHTML = obj.description
+
+    addToWebBtn.value = 'Edit'
+    addToWebBtn.removeAttribute('data-target')
+    addToWebBtn.setAttribute('data-target','#edited-movie')
+    let postEditBtn = document.getElementById('post-edit-btn')
+    postEditBtn.onclick = ()=>{pushEdit(obj._id)}
+
+    let deleteBtn = document.getElementById('delete')
+    deleteBtn.onclick = ()=>{deleteMovie(obj._id)}
+}
+
+const pushEdit = async (id)=>{
+    let response = await fetch(url+id, {
+        method:"PUT",
+        body: JSON.stringify(objToPost),
+        headers: new Headers({
+            "Content-Type": "application/json",
+            "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmFiYzRjYzRiY2RlMTAwMTc2MTZhODEiLCJpYXQiOjE2MDUwOTI1NTYsImV4cCI6MTYwNjMwMjE1Nn0.tzfVOZoX-9PLte7QWS3tQnxK9K_a-13E2cLi0NqI3fM" 
+        })
+    })
+    console.log(response)
+    window.location.reload()
+}
+
+//DELETE BUTTON
+
+const deleteMovie = async (id)=>{
+    let response = await fetch(url+id, {method:"DELETE", headers})
+    console.log(response)
+    window.location.reload()
 }

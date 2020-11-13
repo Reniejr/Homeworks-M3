@@ -50,7 +50,14 @@
         <ul class="nav-list">
           <div class="nav-item"><a href="home.html">Home</a></div>
           <div class="nav-item"><a href="">All Movies</a></div>
-          <div class="nav-item"><a href="">Categories</a></div>
+          <div
+            class="nav-item"
+            id="show-categories"
+            data-toggle="modal"
+            data-target="#show-cat"
+          >
+            Categories
+          </div>
           <div class="nav-item"><a href="">New & Popular</a></div>
           <div class="nav-item"><a href="">My List</a></div>
         </ul>
@@ -80,6 +87,55 @@
     </nav>
 
     <main id="main-content">
+      <!-- Edit Modal -->
+      <div
+        class="modal fade"
+        id="edited-movie"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-body">Do you confirm your edited movie?</div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+              <button
+                type="button"
+                data-dismiss="modal"
+                class="btn btn-success"
+                id="post-edit-btn"
+              >
+                Confirm
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Show Categories Modal -->
+      <div
+        class="modal fade"
+        id="show-cat"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header"></div>
+            <div class="modal-body">
+              <ul id="movie-categories"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- Post Modal -->
       <div
         class="modal fade"

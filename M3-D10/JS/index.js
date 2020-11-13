@@ -55,7 +55,12 @@ window.onload = async ()=>{
     let response = await fetch(url, {headers})
     array = await response.json()
     console.log(array)
-    
+    array.forEach(async (cat)=>{
+        let movie = await fetch(url+cat, {headers})
+        let result = await movie.json()
+        console.log(result)
+    } 
+    )
     return array
 }
 
