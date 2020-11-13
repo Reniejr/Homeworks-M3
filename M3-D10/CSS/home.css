@@ -1,3 +1,7 @@
+body{
+    color: white;
+}
+
 #main-content{
     position: relative;
 }
@@ -31,17 +35,38 @@
 }
 
 .movie-cat{
-    height: 40vh;
+    height: 30vh;
 }
 .movie-list{
+    height: calc(100% - 2rem);
     display: flex;
 }
 
 .movie-cat h4{
     width: 100%;
+    height: 2rem;
+    margin: 0;
+    text-transform: capitalize;
+}
+
+.movie{
+    height: 100%;
+    width: 15rem;
+    margin: 0 1rem;
+    position: relative;
+}
+.movie:hover > .infos{
+    opacity: 1;
 }
 
 .movie-list img{
-    width: 20vh;
-    margin: 0 1rem;
+    width: 100%;
+    height: 100%;
+}
+
+.movie .infos{
+    position: absolute;
+    bottom: 0;
+    opacity: 0;
+    transition: opacity 1s ease;
 }
