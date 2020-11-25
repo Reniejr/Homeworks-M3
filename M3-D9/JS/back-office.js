@@ -72,7 +72,7 @@ const postProduct = async () =>{
         body: JSON.stringify(newProdObj),
         headers: new Headers({
             "Content-Type": "application/json",
-            "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmFiYzRjYzRiY2RlMTAwMTc2MTZhODEiLCJpYXQiOjE2MDUwOTI1NTYsImV4cCI6MTYwNjMwMjE1Nn0.tzfVOZoX-9PLte7QWS3tQnxK9K_a-13E2cLi0NqI3fM" 
+            "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmI2NjNmYjk4MzViMDAwMTc1ODRlZTYiLCJpYXQiOjE2MDYxNDU1MjYsImV4cCI6MTYwNzM1NTEyNn0.cdbDtk23jtEpsN1HX5Y9tjMgSNOlfx0H-y_lP-DD1NI" 
         })
     })
     let product =  await response.json()
@@ -130,6 +130,7 @@ const fillOldProd = (oldId, oldImg, oldTitle, oldBrand, oldDesc, oldPrice)=>{
 let editBtn = document.getElementById('confirm-edit')
 
 const editProd = async () =>{
+    console.log(url+id)
     let response = await fetch(url+id, {
         method:"PUT",
         body: JSON.stringify(newProdObj),
