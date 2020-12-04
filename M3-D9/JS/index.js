@@ -47,7 +47,7 @@ logoToStart.addEventListener('click', function(){window.location.assign('startin
 
 const url = 'https://striveschool-api.herokuapp.com/api/product/'
 const headers = {
-    "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmI2NjNmYjk4MzViMDAwMTc1ODRlZTYiLCJpYXQiOjE2MDYxNDU1MjYsImV4cCI6MTYwNzM1NTEyNn0.cdbDtk23jtEpsN1HX5Y9tjMgSNOlfx0H-y_lP-DD1NI" 
+    "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmM2MDE2YmVkMjY2ODAwMTcwZWEzZmMiLCJpYXQiOjE2MDY4MTIwMTEsImV4cCI6MTYwODAyMTYxMX0.-uMawwVYHlRY3cRlBmcTuo0dwpJc8TvXOECs4sxKYNg" 
 }
 let array=[]
 
